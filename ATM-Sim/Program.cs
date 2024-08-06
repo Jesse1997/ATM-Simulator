@@ -7,7 +7,12 @@ var account = new Account();
 
 // User inserts card
 var atm = new Atm(account);
-atm.ShowScreen();
 
-// User chooses to view money
-atm.ShowMoney();
+// User gives input
+int input;
+do
+{
+    atm.ShowScreen();
+    input = atm.ReceiveInput();
+}
+while (input != 0);

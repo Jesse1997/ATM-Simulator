@@ -13,6 +13,7 @@ namespace ATM_Sim.Tests
             Console.SetOut(sw);
             string expected =
             $"--------ATM--------\n" +
+            $"|  0 - Exit       |\n" +
             $"|  1 - View Money |\n" +
             $"-------------------\n";
 

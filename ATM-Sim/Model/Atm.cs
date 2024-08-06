@@ -15,6 +15,7 @@ namespace ATM_Sim.Model
         public void ShowScreen()
         {
             Console.Write($"--------ATM--------\n" +
+            $"|  0 - Exit       |\n" +
             $"|  1 - View Money |\n" +
             $"-------------------\n");
         }
@@ -32,6 +33,21 @@ namespace ATM_Sim.Model
             var currentMoney = moneyInEuros.EurosToString();
 
             Console.Write($"Current money: €{currentMoney}\n");
+        }
+
+        public int ReceiveInput()
+        {
+            int input = Convert.ToInt32(Console.ReadLine());
+            switch (input)
+            {
+                case 0:
+                    Console.WriteLine("Have a nice day!");
+                    break;
+                case 1:
+                    ShowMoney();
+                    break;
+            }
+            return input;
         }
     }
 }
