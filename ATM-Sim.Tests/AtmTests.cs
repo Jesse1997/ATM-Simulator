@@ -2,7 +2,7 @@ using ATM_Sim.Model;
 
 namespace ATM_Sim.Tests
 {
-    public class AtmTests
+    public class IntExtensionsTests
     {
         [Fact]
         public void ShowScreen_ShouldShowScreenWithOptions()
@@ -30,7 +30,7 @@ namespace ATM_Sim.Tests
             var atm = new Atm(new Account());
             using StringWriter sw = new();
             Console.SetOut(sw);
-            string expected = "Current money: €0,00";
+            string expected = "Current money: €0,00\n";
 
             // Act
             atm.ShowMoney();

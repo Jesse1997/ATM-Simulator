@@ -31,7 +31,7 @@ namespace ATM_Sim.Model
             var moneyInEuros = moneyInCents.ConvertCentsToEuros();
             var currentMoney = moneyInEuros.EurosToString();
 
-            Console.WriteLine($"Current money: €{currentMoney}");
+            Console.Write($"Current money: €{currentMoney}\n");
         }
     }
 }
