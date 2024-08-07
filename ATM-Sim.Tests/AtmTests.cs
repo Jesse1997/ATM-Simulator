@@ -12,9 +12,10 @@ namespace ATM_Sim.Tests
             using StringWriter sw = new ();
             Console.SetOut(sw);
             string expected =
-            $"--------ATM--------\n" +
-            $"|  0 - Exit       |\n" +
-            $"|  1 - View Money |\n" +
+            $"---------ATM----------\n" +
+            $"|  0 - Exit          |\n" +
+            $"|  1 - View Money    |\n" +
+            $"|  2 - Deposit Money |\n" +
             $"-------------------\n";
 
             // Act
@@ -47,7 +48,7 @@ namespace ATM_Sim.Tests
             var atm = new Atm(new Account());
             using StringWriter sw = new();
             Console.SetOut(sw);
-            string expected = $"Current money: €0,00\n";
+            string expected = "Current money: €0,00\n";
 
             // Act
             atm.ReceiveInput(1);
@@ -70,6 +71,25 @@ namespace ATM_Sim.Tests
 
             // Assert
             Assert.Equal(expected, sw.ToString());
+        }
+
+        [Theory]
+        [InlineData(1, 100)]
+        [InlineData(0.11, 11)]
+        [InlineData(345.01, 34501)]
+        public void DepositMoney_ToNewlyCreatedAccount_ShouldAddMoneyToAccount(double input, int expected)
+        {
+            // Arrange
+            var account = new Account();
+            var atm = new Atm(account);
+            using StringWriter sw = new();
+            Console.SetOut(sw);
+
+            // Act
+            atm.DepositMoney(input);
+
+            // Assert
+            Assert.Equal(expected, account.GetMoney());
         }
     }
 }

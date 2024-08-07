@@ -6,5 +6,10 @@
         {
             return value.ToString("0.00");
         }
+
+        public static int EurosToCents(this double value)
+        {
+            return (int)(value * 100);
+        }
     }
 }
