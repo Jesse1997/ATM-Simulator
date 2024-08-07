@@ -35,13 +35,12 @@ namespace ATM_Sim.Model
             Console.Write($"Current money: €{currentMoney}\n");
         }
 
-        public int ReceiveInput()
+        public int ReceiveInput(int input)
         {
-            int input = Convert.ToInt32(Console.ReadLine());
             switch (input)
             {
                 case 0:
-                    Console.WriteLine("Have a nice day!");
+                    Console.Write("Have a nice day!\n");
                     break;
                 case 1:
                     ShowMoney();

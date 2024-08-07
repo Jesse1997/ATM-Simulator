@@ -9,10 +9,11 @@ var account = new Account();
 var atm = new Atm(account);
 
 // User gives input
-int input;
+int option;
 do
 {
     atm.ShowScreen();
-    input = atm.ReceiveInput();
+    var input = Convert.ToInt32(Console.ReadLine());
+    option = atm.ReceiveInput(input);
 }
-while (input != 0);
+while (option != 0);
